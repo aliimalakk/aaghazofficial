@@ -2,6 +2,7 @@
 import 'package:aaghazofficial/auth_services.dart';
 import 'package:aaghazofficial/home.dart';
 import 'package:aaghazofficial/main.dart';
+import 'package:aaghazofficial/main2.dart';
 import 'package:aaghazofficial/signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -113,7 +114,7 @@ class _SignInScreen extends State<SignIn> {
 
                                               labelText: 'Email',
                                               labelStyle: TextStyle(
-                                                color: Colors.grey,
+                                                color: Colors.black,
                                                 fontSize: 14,
                                               ),
 
@@ -156,7 +157,7 @@ class _SignInScreen extends State<SignIn> {
                                               hintText: 'Enter Your Password',
                                               labelText: 'Password',
                                               labelStyle: TextStyle(
-                                                color: Colors.grey,
+                                                color: Colors.black,
                                                 fontSize: 14,
                                               ),
 
@@ -430,7 +431,7 @@ class _SignInScreen extends State<SignIn> {
           password: _passwordController.text);
      await storage.write(key: 'uid', value: userCredential.user?.uid);
 
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Main2()));
 
     } catch (e) {
       print(e);

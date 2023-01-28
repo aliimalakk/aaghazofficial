@@ -1,8 +1,12 @@
+import 'dart:ffi';
+
+import 'package:aaghazofficial/categories.dart';
 import 'package:aaghazofficial/signin.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:floating_bottom_bar/animated_bottom_navigation_bar.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -30,7 +34,6 @@ class _HomeScreen extends State<Home> {
         backgroundColor: Colors.deepOrangeAccent,
     ),
           body:
-
 
           SafeArea(
         child: Builder(
@@ -113,7 +116,7 @@ class _HomeScreen extends State<Home> {
                           //2nd Image of Slider
                           Container(
                             margin: EdgeInsets.all(0.0),
-                            child: Center(child: Text('UPTO 70% off',style: TextStyle(color: Colors.white,fontSize: 36,fontFamily: 'Poppins'),),),
+                            child: Center(child: Text('UPTO 70% off',style: TextStyle(color: Colors.orange,fontSize: 36,fontFamily: 'Poppins'),),),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8.0),
                               image: DecorationImage(
@@ -147,7 +150,7 @@ class _HomeScreen extends State<Home> {
                           //4th Image of Slider
                           Container(
                             margin: EdgeInsets.all(0.0),
-                            child: Center(child: Text('FLAT 50% off',style: TextStyle(color: Colors.white,fontSize: 36,fontFamily: 'Poppins'),),),
+                            child: Center(child: Text('FLAT 50% off',style: TextStyle(color: Colors.orange,fontSize: 36,fontFamily: 'Poppins'),),),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8.0),
                               image: DecorationImage(
@@ -589,7 +592,7 @@ class _HomeScreen extends State<Home> {
                           ],
                         ),
                       ),
-                    
+
 
                 ),
 
@@ -600,63 +603,6 @@ class _HomeScreen extends State<Home> {
 
 
           ) ,
-
-
-          bottomNavigationBar:
-
-          Builder(
-            builder: (context) {
-              return AnimatedBottomNavigationBar(
-                bottomBarItems: [
-
-                  BottomBarItemsModel(
-                    icon: const Icon(Icons.home, size: 40),
-                    iconSelected: const Icon(Icons.home, color: Colors.deepOrangeAccent, size: 40),
-                    title: 'Home',
-                    dotColor: Colors.deepOrangeAccent,
-
-
-                  ),
-                  const BottomBarItemsModel(
-                    icon: const Icon(Icons.category, size: 40),
-                    iconSelected: Icon(Icons.category, color: Colors.deepOrangeAccent, size: 40),
-                    title: 'Categories',
-                    dotColor: Colors.deepOrangeAccent,
-
-
-                  ),
-                  BottomBarItemsModel(
-                    icon: const Icon(Icons.person, size: 40),
-                    iconSelected: const Icon(Icons.person, color: Colors.deepOrangeAccent, size: 40),
-                    title: 'Profile',
-                    dotColor: Colors.deepOrangeAccent,
-
-                  ),
-                  BottomBarItemsModel(
-                    icon: const Icon(Icons.info, size: 40),
-                    iconSelected: const Icon(Icons.info, color: Colors.deepOrangeAccent, size: 40),
-                    title: 'Policy',
-                    dotColor: Colors.deepOrangeAccent,
-
-                  ),
-                ],
-                bottomBarCenterModel: BottomBarCenterModel(
-                  centerBackgroundColor: Colors.white,
-                  centerIcon: const FloatingCenterButton(
-                    child: Icon(
-                      Icons.shopping_cart,
-                      color: AppColors.black,
-                    ),
-
-                  ),
-                  centerIconChild: [
-
-                  ],
-
-                ),
-              );
-            }
-          ),
 
         ),
 

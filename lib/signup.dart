@@ -277,26 +277,12 @@ class _SignUpScreen extends State<SignUp> {
                                                 )
                                               ]
                                           ),
-                                            child:Padding(
-                                              padding: const EdgeInsets.only(left:10,top:30),
-                                              child: ElevatedButton(
-
-                                                child: Center(child: Text('Sign Up'),),
-                                                onPressed: () {
-                                                  Map<String,dynamic> data = {
-                                                    "name" : _nameController.text.toString(),
-                                                    "email" : _emailController.text.toString(),
-                                                    "phone_no" : _phoneController.text.toString(),
-
-                                                  };
-                                                  dbRef.child('Customer').push().set(data).then((value) {
-                                                  Navigator.of(context).pop();
-                                                  });
-
-                                                }
-                                                ,
-                                              ),
-                                            )
+                                          child: InkWell(
+                                            child: Center(child: Text('Sign Up', style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.w500),),),
+                                            onTap: () {
+                                             sign_up();
+                                            },
+                                          ),
 
                                         ),
                                       ),

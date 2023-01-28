@@ -87,6 +87,10 @@ flutter:
     - assets/home_11.png
     - assets/home_12.png
     - assets/home_13.png
+    - assets/categories_1.png
+    - assets/categories_2.png
+    - assets/categories_3.png
+    - assets/categories_4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

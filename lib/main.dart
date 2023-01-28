@@ -2,6 +2,7 @@ import 'package:aaghazofficial/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'main2.dart';
 import 'signin.dart';
 
 
@@ -49,7 +50,7 @@ class StartScreen extends State<Start> {
             child: Center(child: CircularProgressIndicator(),),
           );
         }
-        return Home();
+        return Main2();
       },
       ),
     );
