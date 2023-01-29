@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:aaghazofficial/categories.dart';
+import 'package:aaghazofficial/personal_details.dart';
 import 'package:aaghazofficial/policy.dart';
 import 'package:aaghazofficial/profile.dart';
 import 'package:aaghazofficial/signin.dart';

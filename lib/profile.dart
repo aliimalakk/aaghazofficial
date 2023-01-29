@@ -1,3 +1,4 @@
+import 'package:aaghazofficial/personal_details.dart';
 import 'package:aaghazofficial/signin.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -38,14 +39,27 @@ class _ProfileScreen extends State<Profile> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top:160.0),
+                  padding: const EdgeInsets.only(top:60.0),
+                  child: Center(
+                    child: Container(
+                      height: 120,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100.0),
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top:60.0),
                   child: Center(
                     child: Container(
             height: 410,
                       width: 360,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.0),
-                       color: Color.fromRGBO(242, 101, 55, 0.4),
+                       color: Color.fromRGBO(242, 101, 55, 0.2),
                           ),
                       child: Column(
                         children: [
@@ -65,7 +79,7 @@ class _ProfileScreen extends State<Profile> {
                                    ),
                                     Padding(
                                       padding: const EdgeInsets.all(2.0),
-                                      child: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_right,color: Colors.black,size: 36,shadows: <Shadow>[Shadow(color: Colors.black, blurRadius: 6.0)]),),
+                                      child: IconButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>PersonalDetails()));}, icon: Icon(Icons.arrow_right,color: Colors.black,size: 36,shadows: <Shadow>[Shadow(color: Colors.black, blurRadius: 6.0)]),),
                                     ),
                                   ],
 

@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:aaghazofficial/categories.dart';
+import 'package:aaghazofficial/product_details.dart';
 import 'package:aaghazofficial/signin.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -227,7 +228,7 @@ class _HomeScreen extends State<Home> {
                                             width: 184.0,
                                             child: InkWell(
                                               onTap: () {
-
+                                                Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetails()));
                                               },
                                             ),
                                             decoration: BoxDecoration(
