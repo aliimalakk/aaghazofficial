@@ -43,7 +43,7 @@ class _CategoriesScreen extends State<Categories> {
                   Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 280,
+                      height: 330,
                       width: 180,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.0),
@@ -68,7 +68,7 @@ class _CategoriesScreen extends State<Categories> {
                   Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 280,
+                      height: 330,
                       width: 180,
 
                       decoration: BoxDecoration(
@@ -97,7 +97,7 @@ class _CategoriesScreen extends State<Categories> {
                   Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 280,
+                      height: 330,
                       width: 180,
                       child: InkWell(
                         child: Center(child: Text('KIDS',style: TextStyle(color: Colors.white,fontSize: 32,fontFamily: 'Poppins',),),),
@@ -121,7 +121,7 @@ class _CategoriesScreen extends State<Categories> {
                   Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Container(
-                      height: 280,
+                      height: 330,
                       width: 180,
                       child: InkWell(
                         child: Center(child: Text('ON SALE',style: TextStyle(color: Colors.white,fontSize: 32,fontFamily: 'Poppins',),),),
