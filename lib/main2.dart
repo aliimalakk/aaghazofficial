@@ -35,6 +35,7 @@ class _Main2Screen extends State<Main2> {
     Cart(),
     Profile(),
     Policy(),
+    PersonalDetails(),
   ];
   @override
   Widget build(BuildContext context) {

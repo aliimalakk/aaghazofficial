@@ -7,6 +7,7 @@ import 'package:floating_bottom_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'home.dart';
 
 import 'auth_services.dart';
 
@@ -20,6 +21,7 @@ class PersonalDetails extends StatefulWidget {
 class _PersonalDetailsScreen extends State<PersonalDetails> {
 
   final storage = new FlutterSecureStorage();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,12 +46,7 @@ class _PersonalDetailsScreen extends State<PersonalDetails> {
                   padding: const EdgeInsets.only(top:40.0),
                   child: Center(
                     child: Container(
-                      height: 700,
-                      width: 360,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        color: Color.fromRGBO(242, 101, 55, 0.0),
-                      ),
+
                       child: Column(
                         children: [
                           Padding(
@@ -106,7 +103,7 @@ class _PersonalDetailsScreen extends State<PersonalDetails> {
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(left:12.0,top:6),
-                                      child: Text('alyzmalik96@gmail.com',style: TextStyle(color: Colors.black,fontSize: 20,fontFamily: 'Oxanium',),),
+                                      child: Text('email',style: TextStyle(color: Colors.black,fontSize: 20,fontFamily: 'Oxanium',),),
                                     ),
                                   ],
 

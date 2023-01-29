@@ -3,6 +3,7 @@ import 'package:aaghazofficial/auth_services.dart';
 import 'package:aaghazofficial/home.dart';
 import 'package:aaghazofficial/main.dart';
 import 'package:aaghazofficial/main2.dart';
+import 'package:aaghazofficial/profile.dart';
 import 'package:aaghazofficial/signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,6 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
+import 'adminMain.dart';
 
 
 
@@ -429,9 +432,19 @@ class _SignInScreen extends State<SignIn> {
           .signInWithEmailAndPassword(
           email: _emailController.text,
           password: _passwordController.text);
-     await storage.write(key: 'uid', value: userCredential.user?.uid);
 
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>Main2()));
+     if (_emailController.text == 'ali123@gmail.com')
+       {
+         Navigator.push(context, MaterialPageRoute(builder: (context)=>AdminMain()));
+         await storage.write(key: 'uid', value: userCredential.user?.uid);
+       }
+     else
+       {
+         await storage.write(key: 'uid', value: userCredential.user?.uid);
+         Navigator.push(context, MaterialPageRoute(builder: (context)=>Main2()));
+       }
+
+
 
     } catch (e) {
       print(e);

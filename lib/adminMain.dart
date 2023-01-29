@@ -1,9 +1,9 @@
-import 'package:aaghazofficial/adminMain.dart';
 import 'package:aaghazofficial/home.dart';
 import 'package:aaghazofficial/profile.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'adminPanel.dart';
 import 'main2.dart';
 import 'signin.dart';
 
@@ -12,40 +12,30 @@ import 'signin.dart';
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(Start());
+  runApp(AdminMain());
 }
 
-class Start extends StatefulWidget {
-  const Start({Key? key}) : super(key: key);
+class AdminMain extends StatefulWidget {
+  const AdminMain({Key? key}) : super(key: key);
 
   @override
-  State<Start> createState() => StartScreen();
+  State<AdminMain> createState() => _AdminScreen();
 }
 
 
 
-class StartScreen extends State<Start> {
+class _AdminScreen extends State<AdminMain> {
   // This widget is the root of your application.
   final storage = new FlutterSecureStorage();
   Future<Object> checkLoginStatus() async {
     String? value = await storage.read(key: 'uid');
-    String? value1 = await storage.read(key: 'email');
-    Map<String, String> allValues = await storage.readAll();
-    print(allValues);
-
 
 
     if (value==null)
     {
       return false;
-    }else {
-      if (allValues=='{uid: 4CnDLEdpXIbSPBd778cPHJe6Pvw2}')
-      {return value;}
-      else {
-        return true;
-      }
     }
-
+    return true;
   }
   @override
   Widget build(BuildContext context) {
@@ -57,18 +47,7 @@ class StartScreen extends State<Start> {
         {
           return SignIn();
         }
-        if (snapshot.connectionState == ConnectionState.waiting)
-        {
-          return Container(
-            color: Colors.white,
-            child: Center(child: CircularProgressIndicator(),),
-          );
-        }
-        if (snapshot.data == true)
-        {
-          return Main2();
-        }
-        return AdminMain();
+        return AdminPanel();
       },
       ),
     );

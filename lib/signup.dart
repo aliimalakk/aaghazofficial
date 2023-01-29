@@ -294,8 +294,8 @@ class _SignUpScreen extends State<SignUp> {
                                           }
                                         },
                                         child: Text(
-                                          "SignUp",
-                                          style: TextStyle(color: Theme.of(context).primaryColorLight,fontSize: 20),
+                                          "Sign Up",
+                                          style: TextStyle(color: Colors.white,fontSize: 20),
                                           textAlign: TextAlign.center,
                                         ),
 

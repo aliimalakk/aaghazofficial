@@ -139,37 +139,40 @@ class _ProductDetailsScreen extends State<ProductDetails> {
        ],
      ),
    ),
-                      Container(
-                        height: 44,
-                        width: 172,
-                        decoration: BoxDecoration(
-                            color: Colors.deepOrangeAccent,
-                            borderRadius:  BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.3),
-                                spreadRadius: 2,
-                                blurRadius: 5,
-                                offset: Offset(0, 3),
-                              )
-                            ]
-                        ),
-                        child: InkWell(
-                          child:Center(
-                            child: Row(children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left:14.0),
-                                child: IconButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart()));}, icon: Icon(Icons.shopping_cart),),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left:0.0),
-                                child: Center(child: Text('Add to Cart', style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),),
-                              ),
-                            ],),
+                      Padding(
+                        padding: const EdgeInsets.only(top:20,bottom: 20),
+                        child: Container(
+                          height: 44,
+                          width: 172,
+                          decoration: BoxDecoration(
+                              color: Colors.deepOrangeAccent,
+                              borderRadius:  BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  spreadRadius: 2,
+                                  blurRadius: 5,
+                                  offset: Offset(0, 3),
+                                )
+                              ]
                           ),
-                          onTap: () {
+                          child: InkWell(
+                            child:Center(
+                              child: Row(children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left:14.0),
+                                  child: IconButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart()));}, icon: Icon(Icons.shopping_cart),),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left:0.0,),
+                                  child: Center(child: Text('Add to Cart', style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),),
+                                ),
+                              ],),
+                            ),
+                            onTap: () {
 
-                          },
+                            },
+                          ),
                         ),
                       ),
 

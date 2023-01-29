@@ -36,115 +36,117 @@ class _CategoriesScreen extends State<Categories> {
         SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(6),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Container(
-                      height: 330,
-                      width: 180,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        image: DecorationImage(
-                            image: AssetImage('assets/categories_1.png'),
-                            fit: BoxFit.cover,
-                            colorFilter: ColorFilter.mode(
-                              Colors.black.withOpacity(0.5),
-                              BlendMode.darken,
-                            )
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Container(
+                        height: 320,
+                        width: 180,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          image: DecorationImage(
+                              image: AssetImage('assets/categories_1.png'),
+                              fit: BoxFit.cover,
+                              colorFilter: ColorFilter.mode(
+                                Colors.black.withOpacity(0.5),
+                                BlendMode.darken,
+                              )
+                          ),
                         ),
+                          child: InkWell(
+                            child:Center(child: Text('MEN',style: TextStyle(color: Colors.white,fontSize: 32,fontFamily: 'Poppins',),),),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+                            },
+                          ),
+
                       ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Container(
+                        height:320,
+                        width: 180,
+
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          image: DecorationImage(
+                              image: AssetImage('assets/categories_2.png'),
+                              fit: BoxFit.cover,
+                              colorFilter: ColorFilter.mode(
+                                Colors.black.withOpacity(0.5),
+                                BlendMode.darken,
+                              )
+                          ),
+                        ),
                         child: InkWell(
-                          child:Center(child: Text('MEN',style: TextStyle(color: Colors.white,fontSize: 32,fontFamily: 'Poppins',),),),
+                          child: Center(child: Text('WOMEN',style: TextStyle(color: Colors.white,fontSize: 32,fontFamily: 'Poppins',),),),
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
                           },
                         ),
-
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Container(
-                      height: 330,
-                      width: 180,
-
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        image: DecorationImage(
-                            image: AssetImage('assets/categories_2.png'),
-                            fit: BoxFit.cover,
-                            colorFilter: ColorFilter.mode(
-                              Colors.black.withOpacity(0.5),
-                              BlendMode.darken,
-                            )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Container(
+                        height: 320,
+                        width: 180,
+                        child: InkWell(
+                          child: Center(child: Text('KIDS',style: TextStyle(color: Colors.white,fontSize: 32,fontFamily: 'Poppins',),),),
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+                          },
                         ),
-                      ),
-                      child: InkWell(
-                        child: Center(child: Text('WOMEN',style: TextStyle(color: Colors.white,fontSize: 32,fontFamily: 'Poppins',),),),
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
-                        },
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Container(
-                      height: 330,
-                      width: 180,
-                      child: InkWell(
-                        child: Center(child: Text('KIDS',style: TextStyle(color: Colors.white,fontSize: 32,fontFamily: 'Poppins',),),),
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
-                        },
-                      ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        image: DecorationImage(
-                            image: AssetImage('assets/categories_3.png'),
-                            fit: BoxFit.cover,
-                            colorFilter: ColorFilter.mode(
-                              Colors.black.withOpacity(0.5),
-                              BlendMode.darken,
-                            )
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          image: DecorationImage(
+                              image: AssetImage('assets/categories_3.png'),
+                              fit: BoxFit.cover,
+                              colorFilter: ColorFilter.mode(
+                                Colors.black.withOpacity(0.5),
+                                BlendMode.darken,
+                              )
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Container(
-                      height: 330,
-                      width: 180,
-                      child: InkWell(
-                        child: Center(child: Text('ON SALE',style: TextStyle(color: Colors.white,fontSize: 32,fontFamily: 'Poppins',),),),
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
-                        },
-                      ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        image: DecorationImage(
-                            image: AssetImage('assets/categories_4.png'),
-                            fit: BoxFit.cover,
-                            colorFilter: ColorFilter.mode(
-                              Colors.black.withOpacity(0.5),
-                              BlendMode.darken,
-                            )
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Container(
+                        height: 320,
+                        width: 180,
+                        child: InkWell(
+                          child: Center(child: Text('ON SALE',style: TextStyle(color: Colors.white,fontSize: 32,fontFamily: 'Poppins',),),),
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+                          },
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          image: DecorationImage(
+                              image: AssetImage('assets/categories_4.png'),
+                              fit: BoxFit.cover,
+                              colorFilter: ColorFilter.mode(
+                                Colors.black.withOpacity(0.5),
+                                BlendMode.darken,
+                              )
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
 

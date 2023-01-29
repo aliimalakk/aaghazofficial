@@ -33,6 +33,21 @@ class _HomeScreen extends State<Home> {
         appBar: AppBar(
 
           backgroundColor: Colors.deepOrangeAccent,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.logout,
+                color: Colors.white,
+              ),
+              onPressed: () async {
+
+                  await FirebaseAuth.instance.signOut();
+                  await storage.delete(key: 'uid');
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+
+              },
+            )
+          ],
         ),
         body:
 
@@ -74,10 +89,8 @@ class _HomeScreen extends State<Home> {
 
                                     child: IconButton(
                                       icon: const Icon(Icons.search,color: Colors.white,size: 20,),
-                                      onPressed: () async {
-                                        await FirebaseAuth.instance.signOut();
-                                        await storage.delete(key: 'uid');
-                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+                                      onPressed: ()  {
+
                                       },
                                     ),
                                   ),
