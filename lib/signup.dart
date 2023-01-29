@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'firebase_crud.dart';
+import 'firebase_crudcustomer.dart';
 
 
 
@@ -256,36 +257,52 @@ class _SignUpScreen extends State<SignUp> {
                                           },
                                         ),
                                       ),
+                                  SizedBox(height: 30.0),
+                                  Material(
+                                    elevation: 5.0,
+                                    borderRadius: BorderRadius.circular(20.0),
+                                    color: Color(0xFFFF6E40),
+                                       child: MaterialButton(
+                                        minWidth: 150,
+                                        padding: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 15.0),
+                                        onPressed: () async {
+                                          sign_up();
+                                          if (_formKey.currentState!.validate()) {
 
-
-
-
-                                      Padding(
-                                        padding: const EdgeInsets.only(top:36),
-                                        child: Container(
-                                          height: 44,
-                                          width: 172,
-                                          decoration: BoxDecoration(
-                                              color: Colors.deepOrangeAccent,
-                                              borderRadius:  BorderRadius.circular(10),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.grey.withOpacity(0.3),
-                                                  spreadRadius: 2,
-                                                  blurRadius: 5,
-                                                  offset: Offset(0, 3),
-                                                )
-                                              ]
-                                          ),
-                                          child: InkWell(
-                                            child: Center(child: Text('Sign Up', style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.w500),),),
-                                            onTap: () {
-                                             sign_up();
-                                            },
-                                          ),
-
+                                            var response = await FirebaseCrud.addcustomer(
+                                              customerName: _nameController.text,
+                                              customerEmail: _emailController.text,
+                                              customerContact: _phoneController.text,
+                                              role: "customer",);
+                                            if (response.code != 200) {
+                                              showDialog(
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return AlertDialog(
+                                                      content: Text(response.message.toString()),
+                                                    );
+                                                  });
+                                            } else {
+                                              showDialog(
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return AlertDialog(
+                                                      content: Text(response.message.toString()),
+                                                    );
+                                                  });
+                                            }
+                                          }
+                                        },
+                                        child: Text(
+                                          "SignUp",
+                                          style: TextStyle(color: Theme.of(context).primaryColorLight,fontSize: 20),
+                                          textAlign: TextAlign.center,
                                         ),
+
                                       ),
+
+                                  ),
+
 
 
 
