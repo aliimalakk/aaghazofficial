@@ -37,20 +37,161 @@ class _ProfileScreen extends State<Profile> {
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
-                Container(
-                  child: Center(child: Text('MEN',style: TextStyle(color: Colors.white,fontSize: 36,fontFamily: 'Poppins',),),),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    image: DecorationImage(
-                        image: AssetImage('assets/home_1.png'),
-                        fit: BoxFit.cover,
-                        colorFilter: ColorFilter.mode(
-                          Colors.black.withOpacity(0.5),
-                          BlendMode.darken,
-                        )
-                    ),
+                Padding(
+                  padding: const EdgeInsets.only(top:160.0),
+                  child: Center(
+                    child: Container(
+            height: 410,
+                      width: 360,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8.0),
+                       color: Color.fromRGBO(242, 101, 55, 0.4),
+                          ),
+                      child: Column(
+                        children: [
+                          Center(
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left:16.0,top: 40),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Icon(Icons.person,color: Colors.deepOrangeAccent,size: 48,),
+                                    ),
+                                   Padding(
+                                     padding: const EdgeInsets.only(left:12.0,top: 4),
+                                     child: Text('Personal Details',style: TextStyle(color: Colors.black,fontSize: 28,fontFamily: 'Oxanium',),),
+                                   ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_right,color: Colors.black,size: 36,shadows: <Shadow>[Shadow(color: Colors.black, blurRadius: 6.0)]),),
+                                    ),
+                                  ],
+
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top:10),
+                              child:Center(
+                                child: Container(
+                                  height: 1,
+                                  width: 320,
+                                  color: Colors.black,
+                                ),
+                              )
+                          ),
+                          Center(
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left:16.0,top: 30),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Icon(Icons.shopping_cart,color: Colors.deepOrangeAccent,size: 48,),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left:12.0,top: 4),
+                                      child: Text('Your Orders',style: TextStyle(color: Colors.black,fontSize: 28,fontFamily: 'Oxanium',),),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left:60.0),
+                                      child: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_right,color: Colors.black,size: 36,shadows: <Shadow>[Shadow(color: Colors.black, blurRadius: 6.0)]),),
+                                    ),
+                                  ],
+
+                                ),
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child: Padding(
+                              padding: const EdgeInsets.only(top:10,),
+                              child: Container(
+                                height: 1,
+                                width: 320,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left:16.0,top: 30),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Icon(Icons.favorite,color: Colors.deepOrangeAccent,size: 48,),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left:12.0,top: 4),
+                                      child: Text('Favourites',style: TextStyle(color: Colors.black,fontSize: 28,fontFamily: 'Oxanium',),),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left:70.0),
+                                      child: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_right,color: Colors.black,size: 36,shadows: <Shadow>[Shadow(color: Colors.black, blurRadius: 6.0)]),),
+                                    ),
+                                  ],
+
+                                ),
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child: Padding(
+                              padding: const EdgeInsets.only(top:10,),
+                              child: Container(
+                                height: 1,
+                                width: 320,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child: Container(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left:16.0,top: 30),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Icon(Icons.payment,color: Colors.deepOrangeAccent,size: 48,),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left:12.0,top: 4),
+                                      child: Text('Payments',style: TextStyle(color: Colors.black,fontSize: 28,fontFamily: 'Oxanium',),),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left:75.0),
+                                      child: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_right,color: Colors.black,size: 36,shadows: <Shadow>[Shadow(color: Colors.black, blurRadius: 6.0)]),),
+                                    ),
+                                  ],
+
+                                ),
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child: Padding(
+                              padding: const EdgeInsets.only(top:10,),
+                              child: Container(
+                                height: 1,
+                                width: 320,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                      ),
                   ),
                 ),
+
               ],
             ),
           ),

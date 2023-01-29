@@ -34,23 +34,22 @@ class _CartScreen extends State<Cart> {
 
         SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(32.0),
             child: Column(
               children: [
-                Container(
-                  child: Center(child: Text('MEN',style: TextStyle(color: Colors.white,fontSize: 36,fontFamily: 'Poppins',),),),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    image: DecorationImage(
-                        image: AssetImage('assets/home_1.png'),
-                        fit: BoxFit.cover,
-                        colorFilter: ColorFilter.mode(
-                          Colors.black.withOpacity(0.5),
-                          BlendMode.darken,
-                        )
-                    ),
+                Padding(
+                  padding: const EdgeInsets.only(left:80.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('Cart',style: TextStyle(color: Colors.black,fontSize: 60,fontFamily: 'Oxanium',),),
+                      ),
+                      Icon(Icons.shopping_bag_sharp,size: 32,color: Colors.deepOrangeAccent,),
+                    ],
                   ),
                 ),
+
               ],
             ),
           ),

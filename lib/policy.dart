@@ -37,20 +37,7 @@ class _PolicyScreen extends State<Policy> {
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
-                Container(
-                  child: Center(child: Text('MEN',style: TextStyle(color: Colors.white,fontSize: 36,fontFamily: 'Poppins',),),),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    image: DecorationImage(
-                        image: AssetImage('assets/home_1.png'),
-                        fit: BoxFit.cover,
-                        colorFilter: ColorFilter.mode(
-                          Colors.black.withOpacity(0.5),
-                          BlendMode.darken,
-                        )
-                    ),
-                  ),
-                ),
+
               ],
             ),
           ),

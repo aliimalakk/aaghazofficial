@@ -111,6 +111,10 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/Poppins-Bold.ttf
+
+    - family: Oxanium
+      fonts:
+        - asset: assets/Oxanium-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
