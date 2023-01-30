@@ -41,9 +41,9 @@ class _HomeScreen extends State<Home> {
               ),
               onPressed: () async {
 
-                  await FirebaseAuth.instance.signOut();
-                  await storage.delete(key: 'uid');
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+                await FirebaseAuth.instance.signOut();
+                await storage.delete(key: 'uid');
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
 
               },
             )
@@ -89,8 +89,10 @@ class _HomeScreen extends State<Home> {
 
                                     child: IconButton(
                                       icon: const Icon(Icons.search,color: Colors.white,size: 20,),
-                                      onPressed: ()  {
-
+                                      onPressed: () async {
+                                        await FirebaseAuth.instance.signOut();
+                                        await storage.delete(key: 'uid');
+                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
                                       },
                                     ),
                                   ),

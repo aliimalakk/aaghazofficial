@@ -36,7 +36,7 @@ class _AdminPanelScreen extends State<AdminPanel> {
   TextEditingController _nameProduct=new TextEditingController();
   TextEditingController _priceProduct=new TextEditingController();
   TextEditingController _quantityProduct=new TextEditingController();
-  TextEditingController _imageProduct=new TextEditingController();
+  TextEditingController _decProduct=new TextEditingController();
 
 
 
@@ -81,7 +81,7 @@ class _AdminPanelScreen extends State<AdminPanel> {
                     image: AssetImage("assets/background_3.png"),
                     fit: BoxFit.cover,
                       colorFilter: ColorFilter.mode(
-                        Colors.black.withOpacity(0.6),
+                        Colors.black.withOpacity(0.5),
                         BlendMode.darken,
                       )
 
@@ -95,7 +95,7 @@ class _AdminPanelScreen extends State<AdminPanel> {
                       child: Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top:20),
+                            padding: const EdgeInsets.only(top:60),
                             child: Center(
                               child: Container(
 
@@ -139,9 +139,9 @@ class _AdminPanelScreen extends State<AdminPanel> {
                                           hintText: 'Enter Product Name',
                                           labelText: 'Product Name',
                                           labelStyle: TextStyle(
-                                            color: Colors.white
+                                            color: Colors.white70
                                             ,
-                                            fontSize: 14,
+                                            fontSize: 16,
                                           ),
 
 
@@ -180,7 +180,7 @@ class _AdminPanelScreen extends State<AdminPanel> {
                                             labelText: 'Product Price',
                                             labelStyle: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 14,
+                                              fontSize: 16,
                                             ),
 
 
@@ -211,7 +211,6 @@ class _AdminPanelScreen extends State<AdminPanel> {
                                       padding: const EdgeInsets.only(top: 12),
                                       child: TextFormField(
                                         controller:_quantityProduct,
-                                        obscureText: true,
                                         decoration:  InputDecoration(
                                             prefixIcon: Padding(
                                               padding: const EdgeInsets.only(left:12, right: 12),
@@ -221,7 +220,47 @@ class _AdminPanelScreen extends State<AdminPanel> {
                                             labelText: 'Product Quantity',
                                             labelStyle: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 14,
+                                              fontSize: 16,
+                                            ),
+
+
+                                            border: OutlineInputBorder(
+                                                borderSide: const BorderSide(width: 1, color: Colors.black),
+                                                borderRadius: BorderRadius.circular(10)
+
+                                            ),
+                                            focusedErrorBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.red, width: 1),
+
+                                            ) ,
+                                            errorBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.red, width: 1),
+
+                                            )
+                                        ),
+                                        validator: (value) {
+                                          if (value!.isEmpty) {
+                                            return 'Please enter valid password';
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                    ),
+
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 12),
+                                      child: TextFormField(
+                                        controller:_decProduct,
+                                        decoration:  InputDecoration(
+                                            prefixIcon: Padding(
+                                              padding: const EdgeInsets.only(left:12, right: 12),
+                                              child: const Icon(Icons.description, color: Colors.yellow,size: 35,),
+                                            ),
+                                            hintText: 'Enter Product Description',
+                                            labelText: 'Product Description',
+                                            labelStyle: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16,
                                             ),
 
 
@@ -249,32 +288,48 @@ class _AdminPanelScreen extends State<AdminPanel> {
                                     ),
 
 
-                                    Padding(
+                                    /*Padding(
                                       padding: const EdgeInsets.only(top: 12),
-                                     child: IconButton(
-                                       onPressed: () async {
+                                     child: Container(
+                                       height: 60,
+                                       width: 360,
+
+                                       decoration: BoxDecoration(
+                                         borderRadius: BorderRadius.circular(8.0),
+                                         color: Colors.black,
+                                       ),
+                                       child: Row(
+                                         children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(left:60.0),
+                                              child: Text('Upload Image:',style: TextStyle(color: Colors.white,fontSize: 24,fontFamily: 'Oxanium',),),
+                                            ),
+                                           IconButton(
+                                             onPressed: () async {
+
+                                               ImagePicker imagePicker = ImagePicker();
+                                               XFile? file = await imagePicker.pickImage(source: ImageSource.camera);
+                                               if (file==null) return;
+                                               String uniqueFileName = DateTime.now().millisecondsSinceEpoch.toString();
+                                               Reference referenceRoot = FirebaseStorage.instance.ref();
+                                               Reference referenceDirImages = referenceRoot.child('images');
+                                               Reference referenceImageToUpload = referenceDirImages.child(uniqueFileName);
+                                               try{
+                                                 await referenceImageToUpload.putFile(File(file!.path));
+
+                                                 imageURL= await referenceImageToUpload.getDownloadURL();
+                                               }catch(error){
+
+                                               }
 
 
-                                         ImagePicker imagePicker = ImagePicker();
-                                         XFile? file = await imagePicker.pickImage(source: ImageSource.camera);
-                                         if (file==null) return;
-                                         String uniqueFileName = DateTime.now().millisecondsSinceEpoch.toString();
-                                         Reference referenceRoot = FirebaseStorage.instance.ref();
-                                         Reference referenceDirImages = referenceRoot.child('images');
-                                         Reference referenceImageToUpload = referenceDirImages.child(uniqueFileName);
-                                         try{
-                                           await referenceImageToUpload.putFile(File(file!.path));
-
-                                           imageURL= await referenceImageToUpload.getDownloadURL();
-                                         }catch(error){
-
-                                         }
-
-
-                                       }, icon: Icon(Icons.camera_alt_rounded),
+                                             }, icon: Icon(Icons.camera_alt_rounded,color: Colors.yellow,),
+                                           ),
+                                         ],
+                                       ),
                                      ),
                                     ),
-                                    SizedBox(height: 30.0),
+                           */         SizedBox(height: 30.0),
                                     Material(
                                       elevation: 5.0,
                                       borderRadius: BorderRadius.circular(20.0),
@@ -283,18 +338,18 @@ class _AdminPanelScreen extends State<AdminPanel> {
                                         minWidth: 150,
                                         padding: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 15.0),
                                         onPressed: () async {
-                                          if (_formKey.currentState!.validate()) {
-                                            if (imageURL.isEmpty){
-                                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text('Please Upload an Image')));
+                                         /* if (imageURL.isEmpty)
+                                            {
+                                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Please Upload an Image')));
+                                            }*/
 
-                                              return;
-                                            }
+                                          if (_formKey.currentState!.validate()) {
 
                                             var response = await FirebaseCrud.addproduct(
                                               productName: _nameProduct.text,
                                               productPrice: _priceProduct.text,
                                               productQuantity: _quantityProduct.text,
-                                              productImage: _imageProduct.text,
+                                              productDec: _decProduct.text,
                                             );
                                             if (response.code != 200) {
                                               showDialog(

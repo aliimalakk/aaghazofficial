@@ -57,14 +57,7 @@ class StartScreen extends State<Start> {
         {
           return SignIn();
         }
-        if (snapshot.connectionState == ConnectionState.waiting)
-        {
-          return Container(
-            color: Colors.white,
-            child: Center(child: CircularProgressIndicator(),),
-          );
-        }
-        if (snapshot.data == true)
+        else if (snapshot.data == true)
         {
           return Main2();
         }

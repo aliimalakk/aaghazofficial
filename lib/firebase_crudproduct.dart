@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'response.dart';
 import 'adminPanel.dart';
+String imageURL = '';
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 final CollectionReference _Collection = _firestore.collection('Product');
-String imageURL = '';
+
 
 class FirebaseCrud {
 
@@ -12,10 +13,11 @@ class FirebaseCrud {
     required String productName,
     required String productPrice,
     required String productQuantity,
-    required String productImage,
+    required String productDec,
   }) async {
 
     Response response = Response();
+    print(response);
     DocumentReference documentReferencer =
     _Collection.doc();
 
@@ -23,9 +25,10 @@ class FirebaseCrud {
       "product_name": productName,
       "product_price" : productPrice,
       "product_quantity": productQuantity,
-      "product_image" : imageURL,
+      "product_dec" : productDec,
     };
 
+_Collection.add(data);
     var result = await documentReferencer
         .set(data)
         .whenComplete(() {

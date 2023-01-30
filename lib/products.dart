@@ -3,7 +3,7 @@ class Product{
   String? productName;
   String? productPrice;
   String? productQuantity;
-  String? productImage;
+  String? productDec;
 
-  Product({this.uid,this.productName,this.productPrice,this.productQuantity,this.productImage});
+  Product({this.uid,this.productName,this.productPrice,this.productQuantity,this.productDec});
 }
